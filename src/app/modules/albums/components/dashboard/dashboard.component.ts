@@ -47,6 +47,7 @@ export class DashboardComponent {
 
 }
 
+// There can be seperate files for interfaces
 export interface Album {
     userId: number;
     id: number;

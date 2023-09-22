@@ -16,9 +16,8 @@
 
     <ng-template #albumsExists>
         <div class="row">
-            <div class="col-md-4" *ngFor="let album of albums">
-                <!-- <app-album-card [album]="album"></app-album-card> -->
-                {{ album.title }}
+            <div class="col-md-12" *ngFor="let album of albums">
+                <app-album-card [album]="album"></app-album-card>
             </div>
         </div>
     </ng-template>
