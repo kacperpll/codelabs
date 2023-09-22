@@ -1,0 +1,28 @@
+<div>
+    <div class="image-wrapper">
+        <img src="/assets/codelabs-logo.svg" alt="Logo SVG">
+    </div>
+    <p>dashboard works!</p>
+</div>
+
+
+<ng-container *ngIf="loading; else loaded">
+    <div>
+        Some kind of Loader
+    </div>
+</ng-container>
+
+<ng-template #loaded>
+    <ng-container *ngIf="!albums.length; else albumsExists">
+        <p>No albums found</p>
+    </ng-container>
+
+    <ng-template #albumsExists>
+        <div class="row">
+            <div class="col-md-4" *ngFor="let album of albums">
+                <!-- <app-album-card [album]="album"></app-album-card> -->
+                {{ album.title }}
+            </div>
+        </div>
+    </ng-template>
+</ng-template>
