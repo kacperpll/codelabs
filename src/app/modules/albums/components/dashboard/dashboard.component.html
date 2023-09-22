@@ -2,14 +2,11 @@
     <div class="image-wrapper">
         <img src="/assets/codelabs-logo.svg" alt="Logo SVG">
     </div>
-    <p>dashboard works!</p>
 </div>
 
 
 <ng-container *ngIf="loading; else loaded">
-    <div>
-        Some kind of Loader
-    </div>
+    <app-loading></app-loading>
 </ng-container>
 
 <ng-template #loaded>
