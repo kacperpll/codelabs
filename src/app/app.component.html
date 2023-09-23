@@ -1,3 +1,11 @@
-<app-navigation></app-navigation>
-
-<router-outlet></router-outlet>
+<div class="container-fluid overflow-hidden">
+    <div class="row vh-100 overflow-auto">
+        <app-navigation class="col-12 col-sm-3 col-xl-2
+            px-sm-2 pt-sm-2 px-0
+            bg-light d-flex sticky-top
+            navigation"></app-navigation>
+        <div class="col">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

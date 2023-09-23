@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { NavigationComponent } from './navigation.component';
 import { AppRoutingModule } from '@app/app-routing.module';
 
-
-
 @NgModule({
     declarations: [
         NavigationComponent,
