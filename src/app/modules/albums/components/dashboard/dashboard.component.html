@@ -1,24 +1,17 @@
-<main class="row overflow-auto">
-    <div class="col pt-4">
-        <ng-container *ngIf="loading; else loaded">
-            <app-loading></app-loading>
-        </ng-container>
+<ng-container *ngIf="loading; else loaded">
+    <app-loading></app-loading>
+</ng-container>
 
-        <ng-template #loaded>
-            <ng-container *ngIf="!albums.length; else albumsExists">
-                <p>No albums found</p>
-            </ng-container>
+<ng-template #loaded>
+    <ng-container *ngIf="!albums.length; else albumsExists">
+        <p>No albums found</p>
+    </ng-container>
 
-            <ng-template #albumsExists>
-                <div class="row">
-                    <div class="col-md-12" *ngFor="let album of albums">
-                        <app-album-card [album]="album"></app-album-card>
-                    </div>
-                </div>
-            </ng-template>
-        </ng-template>
-    </div>
-</main>
-<footer class="row bg-light py-4 mt-auto">
-    <div class="col">Footer</div>
-</footer>
+    <ng-template #albumsExists>
+        <div class="row">
+            <div class="col-6 col-sm-4 col-xl-3 mb-4" *ngFor="let album of albums">
+                <app-album-card [album]="album"></app-album-card>
+            </div>
+        </div>
+    </ng-template>
+</ng-template>

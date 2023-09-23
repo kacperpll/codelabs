@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { DashboardModule } from '@albums/components/dashboard/dashboard.module';
 import { WidgetModule } from './modules/widget/components/widget/widget.module';
 import { NavigationModule } from '@shared/components/navigation/navigation.module';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
     declarations: [
@@ -16,6 +17,7 @@ import { NavigationModule } from '@shared/components/navigation/navigation.modul
         DashboardModule,
         WidgetModule,
         NavigationModule,
+        ModalModule.forRoot(),
     ],
     providers: [],
     bootstrap: [AppComponent]
