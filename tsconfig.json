@@ -36,6 +36,9 @@
         "@albums/*": [
             "src/app/modules/albums/*"
         ],
+        "@widget/*": [
+            "src/app/modules/widget/*"
+        ],
     }
   },
   "angularCompilerOptions": {
