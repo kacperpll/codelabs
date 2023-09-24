@@ -48,7 +48,6 @@ export class EditAlbumModalComponent {
             })
             .subscribe({
                 next: (album: any) => {
-                    console.log(album);
                     this.albumEdited.emit(album);
                     this.bsModalRef.hide();
                     this.alertsService.showSuccessMessage('Album edited!', 'Success!');

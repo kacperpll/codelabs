@@ -58,7 +58,6 @@ export class DashboardComponent implements OnDestroy, OnInit{
             }
         );
         bsModalRef.content.albumCreated.subscribe((album: Album) => {
-            console.log(album);
             this.albums.unshift(album);
         });
     }
@@ -69,7 +68,6 @@ export class DashboardComponent implements OnDestroy, OnInit{
     }
 
     deleteAlbumsUpdate(albumId: number) {
-        console.log("Delete", albumId);
         const index = this.albums.findIndex((a) => a.id === albumId);
         this.albums.splice(index, 1);
     }
