@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './modules/albums/components/dashboard/dashboard.component';
-import { WidgetComponent } from './modules/widget/components/widget/widget.component';
+import { DashboardComponent } from '@albums/components/dashboard/dashboard.component';
+import { WidgetComponent } from '@widget/components/widget/widget.component';
 
 const routes: Routes = [
     { path: '', pathMatch: "full", redirectTo: 'albums'},

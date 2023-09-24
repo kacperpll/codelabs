@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Album } from '../dashboard/dashboard.component';
+import { Album } from '@albums/components/dashboard/dashboard.component';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { EditAlbumModalComponent } from '../edit-album-modal/edit-album-modal.component';
-import { DeleteAlbumModalComponent } from '../delete-album-modal/delete-album-modal.component';
+import { EditAlbumModalComponent } from '@albums/components/edit-album-modal/edit-album-modal.component';
+import { DeleteAlbumModalComponent } from '@albums/components/delete-album-modal/delete-album-modal.component';
 
 @Component({
   selector: 'app-album-card',

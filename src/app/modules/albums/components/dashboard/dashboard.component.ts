@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { AlbumsService } from '../../services/albums.services';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AlbumsService } from '@albums/services/albums.services';
 import { Subject, finalize, takeUntil } from 'rxjs';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { CreateAlbumModalComponent } from '../create-album-modal/create-album-modal.component';
+import { CreateAlbumModalComponent } from '@albums/components/create-album-modal/create-album-modal.component';
 import { AlertsService } from '@app/utils/alerts.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { AlertsService } from '@app/utils/alerts.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnDestroy, OnInit{
     private destroy$: Subject<boolean> = new Subject<boolean>();
 
     public albums: Album[];
@@ -76,7 +76,7 @@ export class DashboardComponent {
 
 }
 
-// There can be seperate files for interfaces
+// There can be a seperate file for interfaces
 export interface Album {
     userId: number;
     id: number;

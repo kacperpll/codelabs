@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
 import { BaseModalComponent } from '@shared/components/base-modal/base-modal.component';
 import { BsModalRef } from 'ngx-bootstrap/modal';
-import { AlbumsService } from '../../services/albums.services';
+import { AlbumsService } from '@albums/services/albums.services';
 import { AlertsService } from '@app/utils/alerts.service';
 import { Subject, finalize, takeUntil } from 'rxjs';
 

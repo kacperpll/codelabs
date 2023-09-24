@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { API } from "src/environments/environment";
-import { Album } from "../components/dashboard/dashboard.component";
+import { Album } from "@albums/components/dashboard/dashboard.component";
 
 @Injectable({
     providedIn: "root",
