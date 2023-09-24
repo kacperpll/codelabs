@@ -16,7 +16,7 @@
             type="button"
             class="btn btn-primary"
             (click)="createAlbum()"
-            [disabled]="processing"
+            [disabled]="processing || !title"
         >
             Create
         </button>

@@ -3,13 +3,10 @@
         <app-navigation class="col-12 col-md-3 col-xl-2
             px-md-2 pt-md-2 px-0
             bg-light d-flex sticky-top
-            navigation"></app-navigation>
-        <div class="col" style="min-height: calc(100vh - 62px);">
-            <main class="row overflow-auto">
-                <div class="col pt-4">
-                    <router-outlet></router-outlet>
-                </div>
-            </main>
+            navigation"
+        ></app-navigation>
+        <div class="col p-0 flex-grow-1" style="min-height: calc(100vh - 62px);">
+            <router-outlet></router-outlet>
         </div>
     </div>
 </div>

@@ -1,0 +1,101 @@
+.widgetContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: #282c4c;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+.widgetWrapper {
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    width: 375px;
+    height: 445px;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.widgetGoalTitle, .widgetLoader, .widgetGoalInfo, .widgetLeaderboardTitleWrapper, .widgetLeaderboardList {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.widgetGoalTitle {
+    grid-area: title;
+    background-color: rgb(230, 123, 123);
+    text-transform: uppercase;
+}
+.widgetLoader {
+    grid-area: loader;
+    background-color: rgb(153, 228, 130);
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+
+    > img {
+        position: absolute;
+        top: 8px;
+        rotate: -5deg;
+        width: 110px;
+        height: 110px;
+    }
+}
+.widgetGoalInfo {
+    grid-area: info;
+    background-color: rgb(104, 177, 190);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.goalInfo {
+
+}
+.streakWrapper {
+    display: flex;
+}
+.streak {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.widgetLeaderboardTitleWrapper {
+    grid-area: listTitle;
+    background-color: rgb(216, 125, 235);
+    justify-content: space-between;
+}
+.leaderboardTitle {
+    text-transform: uppercase;
+}
+
+.widgetLeaderboardList {
+    grid-area: list;
+    background-color: rgb(228, 162, 109);
+    flex-direction: column;
+}
+
+.widgetWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    // To check
+    // grid-template-rows: 35px 1fr 1fr 1fr 35px 1fr 1fr 1fr;
+    grid-template-areas:
+        "title      title       title"
+        "loader     info        info"
+        "loader     info        info"
+        "loader     info        info"
+        "listTitle  listTitle   listTitle"
+        "list       list        list"
+        "list       list        list"
+        "list       list        list"
+        "list       list        list"
+        "list       list        list";
+}

@@ -2,15 +2,15 @@
     <a href="/" class="d-flex align-items-center pb-md-3 mb-md-0 me-md-auto text-white text-decoration-none">
         <img src="/assets/codelabs-logo.svg" width="100px" alt="Logo SVG">
     </a>
-    <ul class="nav nav-pills flex-md-column flex-row flex-nowrap flex-shrink-1 flex-md-grow-0 flex-grow-1 mb-md-auto mb-0 justify-content-center align-items-center align-items-md-start" id="menu">
-        <li class="nav-item">
+    <ul class="w-100 nav nav-pills flex-md-column flex-row flex-nowrap flex-shrink-1 flex-md-grow-0 flex-grow-1 mb-md-auto mb-0 justify-content-center align-items-center align-items-md-start" id="menu">
+        <li class="nav-item w-100">
             <a routerLink="/albums"
                 class="nav-link d-flex align-items-center"
                 [ngClass]="{'active': router.url === '/albums'}">
                 <i class="fs-5 bi bi-columns-gap"></i><span class="ms-2 d-none d-md-inline">Albums</span>
             </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item w-100">
             <a routerLink="/widget"
                 class="nav-link d-flex align-items-center"
                 [ngClass]="{'active': router.url === '/widget'}">
