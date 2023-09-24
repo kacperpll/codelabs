@@ -39,12 +39,32 @@
     position: relative;
     flex-direction: column;
 
-    > img {
+    > img, svg {
         position: absolute;
         top: 8px;
         rotate: -5deg;
         width: 110px;
         height: 110px;
+    }
+
+    .containerPath {
+        position: absolute;
+        top: 8px;
+        rotate: 6deg;
+        width: 110px;
+        height: 110px;
+        transform: scale(-1, 1);
+
+        .grayPath {
+            stroke-width: 15px;
+            stroke: #ebeff4;
+            stroke-dasharray: 420;
+        }
+        .bluePath {
+            stroke-width: 15;
+            stroke-dasharray: 420 820;
+            stroke-dashoffset: calc(420 - ((420 / 50) * 35));
+        }
     }
 }
 .widgetGoalInfo {
