@@ -1,0 +1,25 @@
+<app-base-modal>
+    <ng-container header>
+        Edit Album
+    </ng-container>
+    <ng-container body>
+        <div>
+            <label>Title<span class="text-danger">*</span></label>
+            <input
+                type="text"
+                class="form-control"
+                (input)="validateTitle()"
+                [(ngModel)]="title">
+        </div>
+    </ng-container>
+    <ng-container footer>
+        <button
+            type="button"
+            class="btn btn-primary"
+            (click)="editAlbum()"
+            [disabled]="processing || !validTitle"
+        >
+            Save
+        </button>
+    </ng-container>
+</app-base-modal>

@@ -4,10 +4,14 @@
         <p class="card-text">Belongs to: {{album.userId}}</p>
     </div>
     <div class="card-footer d-flex justify-content-center">
-        <button type="button" class="btn btn-primary me-2">
+        <button type="button"
+            class="btn btn-primary me-2"
+            (click)="showEditAlbumModal()">
             <i class="bi bi-pencil-square"></i>
         </button>
-        <button type="button" class="btn btn-outline-danger">
+        <button type="button"
+            class="btn btn-outline-danger"
+            (click)="showDeleteAlbumModal()">
             <i class="bi bi-trash"></i>
         </button>
     </div>

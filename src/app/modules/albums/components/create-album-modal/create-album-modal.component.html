@@ -1,0 +1,24 @@
+<app-base-modal>
+    <ng-container header>
+        Create Album
+    </ng-container>
+    <ng-container body>
+        <div>
+            <label>Title<span class="text-danger">*</span></label>
+            <input
+                type="text"
+                class="form-control"
+                [(ngModel)]="title">
+        </div>
+    </ng-container>
+    <ng-container footer>
+        <button
+            type="button"
+            class="btn btn-primary"
+            (click)="createAlbum()"
+            [disabled]="processing"
+        >
+            Create
+        </button>
+    </ng-container>
+</app-base-modal>

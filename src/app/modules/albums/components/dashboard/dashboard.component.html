@@ -3,15 +3,28 @@
 </ng-container>
 
 <ng-template #loaded>
-    <ng-container *ngIf="!albums.length; else albumsExists">
-        <p>No albums found</p>
-    </ng-container>
-
-    <ng-template #albumsExists>
-        <div class="row">
-            <div class="col-6 col-sm-4 col-xl-3 mb-4" *ngFor="let album of albums">
-                <app-album-card [album]="album"></app-album-card>
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1 class="h3">Albums</h1>
+                <button type="button" class="btn btn-primary" (click)="showCreateAlbumModal()">Add new</button>
             </div>
         </div>
-    </ng-template>
+
+        <ng-container *ngIf="!albums.length; else albumsExists">
+            <div class="col d-flex flex-column align-items-center">
+                    <i class="bi bi-exclamation-octagon text-danger" style="font-size: 70px;"></i>
+                    <p><b>No albums found</b></p>
+            </div>
+        </ng-container>
+        <ng-template #albumsExists>
+            <div class="col-6 col-sm-4 col-xl-3 mb-4" *ngFor="let album of albums">
+                <app-album-card
+                    [album]="album"
+                    (editAlbumsUpdate)="editAlbumsUpdate($event)"
+                    (deleteAlbumsUpdate)="deleteAlbumsUpdate($event)"
+                ></app-album-card>
+            </div>
+        </ng-template>
+    </div>
 </ng-template>
