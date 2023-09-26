@@ -43,7 +43,7 @@ export class DashboardComponent implements OnDestroy, OnInit{
                     this.albums = albums;
                 },
                 error: (err) => {
-                    console.log(err);
+                    console.error(err);
                     this.alertsService.showErrorMessage('Couldn\'t load list of albums', 'Error fetching albums');
                 },
             });

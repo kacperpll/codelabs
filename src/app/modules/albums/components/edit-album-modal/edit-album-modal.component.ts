@@ -53,7 +53,7 @@ export class EditAlbumModalComponent {
                     this.alertsService.showSuccessMessage('Album edited!', 'Success!');
                 },
                 error: (err) => {
-                    console.log(err);
+                    console.error(err);
                     this.alertsService.showErrorMessage('Couldn\'t edit album', 'Error editing album');
                 },
             });

@@ -47,7 +47,7 @@ export class DeleteAlbumModalComponent implements OnDestroy {
                     this.alertsService.showSuccessMessage('Album deleted!', 'Success!');
                 },
                 error: (err) => {
-                    console.log(err);
+                    console.error(err);
                     this.alertsService.showErrorMessage('Couldn\'t delete album', 'Error deleting album');
                 },
             });

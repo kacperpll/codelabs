@@ -107,10 +107,12 @@ export interface WidgetData {
         current: number;
         best: number;
     };
-    list: {
-        name: string;
-        range: number;
-        status?: string;
-        position?: number;
-    }[];
+    list: ListItem[];
 };
+
+export interface ListItem {
+    name: string;
+    range: number;
+    status?: string;
+    position?: number;
+}

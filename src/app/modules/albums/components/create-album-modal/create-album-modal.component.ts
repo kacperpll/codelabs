@@ -49,7 +49,7 @@ export class CreateAlbumModalComponent implements OnDestroy {
                     this.alertsService.showSuccessMessage('Album created!', 'Success!');
                 },
                 error: (err) => {
-                    console.log(err);
+                    console.error(err);
                     this.alertsService.showErrorMessage('Couldn\'t create album', 'Error creating album');
                 },
             });
