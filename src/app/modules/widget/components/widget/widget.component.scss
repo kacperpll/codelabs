@@ -1,3 +1,24 @@
+:root {
+    --current-loader: 38;
+    --max-loader: 50;
+}
+
+.widgetWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "title      title       title"
+        "loader     info        info"
+        "loader     info        info"
+        "loader     info        info"
+        "listTitle  listTitle   listTitle"
+        "list       list        list"
+        "list       list        list"
+        "list       list        list"
+        "list       list        list"
+        "list       list        list";
+}
+
 .widgetContainer {
     display: flex;
     align-items: center;
@@ -6,13 +27,10 @@
     background-color: #282c4c;
 
     font-family: 'Roboto', sans-serif;
+    color: #36404a;
 }
 
 .widgetWrapper {
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-    // justify-content: center;
     width: 375px;
     height: 445px;
     background: white;
@@ -26,23 +44,45 @@
     display: flex;
 }
 
+.widgetGoalTitle, .leaderboardTitle {
+    text-transform: uppercase;
+    color: #5f9ce5;
+    font-weight: 600;
+    font-size: 14px;
+}
+
 .widgetGoalTitle {
     grid-area: title;
-    background-color: rgb(230, 123, 123);
-    text-transform: uppercase;
+    align-items: center;
+    height: 19px;
+    padding-top: 10px;
 }
 .widgetLoader {
     grid-area: loader;
-    background-color: rgb(153, 228, 130);
     justify-content: center;
     align-items: center;
     position: relative;
     flex-direction: column;
+    width: 120px;
+
+    .top {
+        font-weight: 400;
+        color: #a2a7ab;
+        margin-top: 10px;
+    }
+    .middle {
+        font-size: 30px;
+        line-height: 30px;
+        margin-bottom: 10px;
+    }
+    .bottom {
+        font-size: 12px;
+    }
 
     > img, svg {
         position: absolute;
         top: 8px;
-        rotate: -5deg;
+        rotate: 9deg;
         width: 110px;
         height: 110px;
     }
@@ -58,64 +98,87 @@
         .grayPath {
             stroke-width: 15px;
             stroke: #ebeff4;
-            stroke-dasharray: 420;
+            stroke-dasharray: 440;
         }
         .bluePath {
             stroke-width: 15;
-            stroke-dasharray: 420 820;
-            stroke-dashoffset: calc(420 - ((420 / 50) * 35));
+            stroke-dasharray: 440 820;
+            stroke-dashoffset: calc(440 - ((440 / var(--max-loader)) * var(--current-loader)));
         }
     }
 }
 .widgetGoalInfo {
     grid-area: info;
-    background-color: rgb(104, 177, 190);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 12px;
+    padding-left: 14px;
+    padding-top: 3px;
 }
 .goalInfo {
-
+    width: 100%;
+    margin-top: 8px;
+    height: 25px;
+    line-height: 19px;
 }
 .streakWrapper {
     display: flex;
+    width: 100%;
+    column-gap: 8px;
 }
 .streak {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    background: #f9f9fb;
+    border-radius: 5px;
+    width: 50%;
+    height: 90%;
+}
+.streakNumber {
+    font-size: 20px;
 }
 
 .widgetLeaderboardTitleWrapper {
     grid-area: listTitle;
-    background-color: rgb(216, 125, 235);
     justify-content: space-between;
-}
-.leaderboardTitle {
-    text-transform: uppercase;
+    align-items: center;
 }
 
 .widgetLeaderboardList {
     grid-area: list;
-    background-color: rgb(228, 162, 109);
     flex-direction: column;
+    row-gap: 2px;
 }
 
-.widgetWrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    // To check
-    // grid-template-rows: 35px 1fr 1fr 1fr 35px 1fr 1fr 1fr;
-    grid-template-areas:
-        "title      title       title"
-        "loader     info        info"
-        "loader     info        info"
-        "loader     info        info"
-        "listTitle  listTitle   listTitle"
-        "list       list        list"
-        "list       list        list"
-        "list       list        list"
-        "list       list        list"
-        "list       list        list";
+// Select
+.leaderboardSelect {
+    position: relative;
+}
+.leaderboardSelect select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 110px;
+    padding: 10px;
+    font-weight: 500;
+    color: #606060;
+    line-height: 14px;
+    box-sizing: border-box;
+    border: 1px solid #d2d2d2;
+    border-radius: 5px;
+    background: linear-gradient(0deg, rgb(245 245 245) 0%, rgb(245 245 245) 29%, rgba(255,255,255,1) 90%);
+}
+.leaderboardSelect::after {
+    content: "\f282";
+    font-family: "bootstrap-icons";
+    align-self: stretch;
+    color: #b4b4b4;
+    right: 14px;
+    font-weight: bold;
+    font-size: 9px;
+    top: 12px;
+    position: absolute;
+    pointer-events: none;
 }

@@ -1,39 +1,12 @@
 <div class="widgetContainer">
-    <!-- <div class="widgetWrapper">
-        <div class="widgetGoal">
-            <div class="widgetGoalTitle">
-                pedros weekly goal
-            </div>
-            <div class="widgetLoader">
-                <img src="/assets/widget-loader.svg" width="100px" alt="Loader SVG">
-            </div>
-            <div class="widgetGoalInfo">
-                loader
-            </div>
-        </div>
-        <div class="widgetLeaderboard">
-            <div class="widgetLeaderboardTitle">
-                leaderboard
-
-                <div>select</div>
-            </div>
-            <div class="widgetLeaderboardList">
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
-                <div>4</div>
-            </div>
-        </div>
-    </div> -->
     <div class="widgetWrapper">
         <div class="widgetGoalTitle">
             pedro's weekly goal
         </div>
         <div class="widgetLoader">
-            <small style="font-weight: 400;color: #a2a7ab;">Current</small>
-            <span style="font-size: 2rem;line-height: 30px;margin-bottom: 6px;">38m</span>
-            <small><b>50m Goal</b></small>
-            <!-- <img src="/assets/widget-loader.svg" width="100px" height="100px" alt="Loader SVG"> -->
+            <small class="top">Current</small>
+            <span class="middle">{{selectedData.loader.current}}m</span>
+            <span class="bottom"><b>{{selectedData.loader.max}}m Goal</b></span>
             <svg class="containerPath" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="216.1px" height="188.4px" viewBox="0 14 216.1 188.4" enable-background="new 0 14 216.1 188.4" xml:space="preserve">
                 <path class="grayPath" fill="none" stroke="#dfe3e9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="   M 177.5, 181.4   c 19.4-18.4, 31.5-44.5, 31.5-73.3   c 0-55.8-45.2-101-101-101   S 7,52.2,7,108   c 0,28.9,12.1,54.9,31.5,73.3">
                 </path>
@@ -43,14 +16,18 @@
 
         </div>
         <div class="widgetGoalInfo">
-            <span class="goalInfo"><b>12</b> more mins. to achieve this week's Goal.</span>
-            <div class="streakWrapper">
+            <span class="goalInfo"><b>{{selectedData.mins}}</b> more mins. to achieve this week's Goal.</span>
+            <div class="streakWrapper ">
                 <div class="streak">
-                    <span><b>4</b></span>
+                    <span class="streakNumber">
+                        <b>{{selectedData.streak.current}}</b>
+                    </span>
                     <span><b>Current Streak</b></span>
                 </div>
                 <div class="streak">
-                    <span><b>12</b></span>
+                    <span class="streakNumber">
+                        <b>{{selectedData.streak.best}}</b>
+                    </span>
                     <span><b>Best Streak</b></span>
                 </div>
             </div>
@@ -58,13 +35,23 @@
         <div class="widgetLeaderboardTitleWrapper">
             <span class="leaderboardTitle">leaderboard</span>
 
-            <div>select</div>
+            <div class="leaderboardSelect">
+                <select name="leaderboard"
+                    [(ngModel)]="range"
+                    (ngModelChange)="onChange($event)">
+                    <option value="week">Week</option>
+                    <option value="month">Month</option>
+                </select>
+            </div>
         </div>
         <div class="widgetLeaderboardList">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
+            <ng-template ngFor let-item [ngForOf]="selectedData.list" let-i="index">
+                <app-list-item
+                    style="flex: 1; display: flex;"
+                    [item]="item"
+                    [index]="i"
+                ></app-list-item>
+            </ng-template>
         </div>
     </div>
 </div>
