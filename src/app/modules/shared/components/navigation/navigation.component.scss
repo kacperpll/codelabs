@@ -1,0 +1,13 @@
+.logo {
+    position: absolute;
+}
+
+@media (min-width: 768px) {
+    .nav-item {
+        width: 100%;
+    }
+
+    .logo {
+        position: static;
+    }
+}
